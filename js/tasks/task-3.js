@@ -3,5 +3,5 @@
  * Разбери приоритет операторов в инструкции присвоения значения переменной result.
  */
 
-// const result = 108 + 223 - 2 * 5;
-// console.log(result);
+const result = 108 + 223 - 2 * 5;
+console.log(result);

@@ -22,3 +22,16 @@
 // console.log((1 && null && 2) > 0);
 
 // console.log(null || (2 && 3) || 4);
+
+// console.log(!undefined);
+
+// console.log(5 > 5);
+
+// const a = '5';
+
+// Number(a);
+
+// const b = +a;
+
+// console.log(typeof a);
+// console.log(typeof b);
