@@ -10,3 +10,13 @@
 
 const daysUntilDeadline = 5;
 // Пиши код ниже этой строки
+
+if (daysUntilDeadline === 0) {
+    console.log('сегодня');
+} else if (daysUntilDeadline === 1) {
+    console.log('завтра');
+} else if (daysUntilDeadline === 2) {
+    console.log('Послезавтра');
+} else {
+    console.log('Дата в будущем');
+}

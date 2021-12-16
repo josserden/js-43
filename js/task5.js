@@ -5,6 +5,9 @@
 
 let link = 'https://somesite.com/about';
 // Пиши код ниже этой строки
-
+if (link.includes('my-site') && !link.endsWith('/')) {
+    console.log(link + '/');
+} else {
+    console.log(link);
+}
 // Пиши код выше этой строки
-console.log(link);

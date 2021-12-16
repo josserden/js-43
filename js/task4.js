@@ -6,5 +6,10 @@
 let link = 'https://my-site.com/about';
 // Пиши код ниже этой строки
 
+if (!link.endsWith('/')) {
+    console.log(link + '/');
+}
+
 // Пиши код выше этой строки
-console.log(link);
+
+// console.log(!link.endsWith('/'));
