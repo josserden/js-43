@@ -8,8 +8,13 @@
 
  */
 
-// let weight = '88,3';
-// let height = '1.75';
+let weight = '88,3';
+let height = '1.75';
 
-// const bmi = ;
-// console.log(bmi); // 28.8
+// if (weight.includes(',')) {
+//     weight = weight.replace(',', '.');
+// }
+
+// const bmi = parseFloat(weight) / Math.pow(parseFloat(height), 2);
+
+// console.log(bmi.toFixed(1));
