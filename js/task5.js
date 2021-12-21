@@ -4,3 +4,9 @@
  */
 
 const string = 'Welcome to the future';
+
+const stringArr = string.split(' ');
+stringArr.pop();
+stringArr.shift();
+
+console.log(stringArr.join(' '));
