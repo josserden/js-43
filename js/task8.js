@@ -1,32 +1,8 @@
-// todo Дедлайн сдачи проекта (switch)
+// todo Поиск элемента
 /*
- * Выполни рефакторинг кода задачи номер 6 используя switch.
+ * Напиши скрипт поиска самого маленького числа в массиве. Код должен работать для любого массива чисел. Используй цикл для решения задачи.
  */
 
-const daysUntilDeadline = 0;
+const numbers = [2, 17, 94, 1, 23, 37];
 
-// if (daysUntilDeadline === 0) {
-//     console.log('Сегодня');
-// } else if (daysUntilDeadline === 1) {
-//     console.log('Завтра');
-// } else if (daysUntilDeadline === 2) {
-//     console.log('Послезавтра');
-// } else {
-//     console.log('Дата в будущем');
-// }
-
-switch (daysUntilDeadline) {
-    case 0:
-        console.log('Сегодня');
-        break;
-    case 1:
-        console.log('Завтра');
-        break;
-    case 2:
-        console.log('Послезавтра');
-        break;
-
-    default:
-        console.log('Дата в будущем');
-        break;
-}
+console.log(min); // 1
