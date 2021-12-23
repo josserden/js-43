@@ -1,28 +1,22 @@
-// todo Homework
+// todo Коллекция курсов (includes, indexOf, push и т. д.)
 
 /*
- * Напиши скрипт который просит посетителя ввести число в prompt до тех пор, пока посетитель на нажмет Cancel и каждый раз добавляет введенное значение к общей сумме.
- * При загрузке страницы пользователю предлагается в prompt ввести число. Ввод добавляется к значению переменной total.
- * Операция ввода числа продолжается до тех пор, пока пользователь не нажмет кнопку Cancel в prompt.
- * После того как пользователь прекратил ввод нажав кнопку Cancel, показать alert со строкой 'Общая сумма чисел равна [сумма]'.
- * Делать проверку того, что пользователь ввел именно число, а не произвольный набор символов, не обязательно, но рекомендую. Если хочешь, в случае некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз', при этом результат prompt плюсовать к общей сумме не нужно, после чего снова пользователю предлагается ввести число в prompt.
+ * Напишите функции для работы с коллекцией обучающих курсов courses:
+
+* addCourse(name) - добавляет курс в конец коллекции
+* removeCourse(name) - удаляет курс из коллекции
+* updateCourse(oldName, newName) - изменяет имя на новое
  */
 
-// let userInput;
-// let total = 0;
+const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
 
-// while (true) {
-//     userInput = prompt('введите число', '');
-//     if (isNaN(Number(userInput))) {
-//         alert('Было введено не число, попробуйте еще раз');
+addCourse('Express');
+console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL', 'Express']
+addCourse('CSS'); // 'У вас уже есть такой курс'
 
-//         continue;
-//     }
+removeCourse('React');
+console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'Express']
+removeCourse('Vue'); // 'Курс с таким именем не найден'
 
-//     if (userInput === null) {
-//         alert(`Общая сумма чисел равна ${total}`);
-//         break;
-//     }
-
-//     total += Number(userInput);
-// }
+updateCourse('Express', 'NestJS');
+console.log(courses); // ['HTML', 'CSS', 'JavaScript', 'PostgreSQL', 'NestJS']

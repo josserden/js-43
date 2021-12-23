@@ -1,18 +1,8 @@
-// todo  Массивы и строки
+// todo  Меньшее из чисел
 /*
- * Напиши скрипт для вычисления площади прямоугольника со сторонами, значения которых хранятся в переменной values в виде строки. Значения гарантированно разделены пробелом.
+ * Напиши функцию min(a,b), которая возвращает меньшее из чисел a и b.
  */
 
-// const values = '8 11';
-
-// const numbers = values.split(' ');
-// let counter = 1;
-
-// console.log(numbers);
-// console.log(Number(numbers[0]) * Number(numbers[1]));
-
-// for (const number of numbers) {
-//     counter = counter * number;
-// }
-
-// console.log(counter);
+console.log(min(2, 5)); // 2
+console.log(min(3, -1)); // -1
+console.log(min(1, 1)); // 1
