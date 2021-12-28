@@ -9,8 +9,22 @@
  */
 
 const user = {
-    name: 'Mango',
-    age: 20,
-    hobby: 'html',
+    name: 'John',
+    age: 21,
+    hobby: 'css',
     premium: true,
 };
+
+user.mood = 'happy';
+user.hobby = 'skydiving';
+user.premium = false;
+
+const keys = Object.keys(user);
+
+// console.log(keys);
+
+for (const key of keys) {
+    console.log(`${key} : ${user[key]}`);
+}
+
+console.log(user);
