@@ -1,13 +1,11 @@
-// todo Площадь прямоугольника
+//todo Массив объектов
 /*
- * Напиши функцию getRectArea(dimensions) для вычисления площади прямоугольника со сторонами, значения которых будут переданы в параметр dimensions в виде строки. Значения гарантированно разделены пробелом.
+ * Напишите ф-цию calcTotalPrice(stones, stoneName), которая принимает массив объектов и строку с названием камня. Ф-ция считает и возвращает общую стоимость камней с таким именем, ценой и количеством из объекта
  */
 
-function getRectArea(dimensions) {
-    let a = Number(dimensions.split(' ')[0]);
-    let b = Number(dimensions.split(' ')[1]);
-
-    return a * b;
-}
-
-console.log(getRectArea('8 11'));
+const stones = [
+    { name: 'Изумруд', price: 1300, quantity: 4 },
+    { name: 'Бриллиант', price: 2700, quantity: 3 },
+    { name: 'Сапфир', price: 400, quantity: 7 },
+    { name: 'Щебень', price: 200, quantity: 2 },
+];
