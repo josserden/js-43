@@ -8,15 +8,15 @@ function getBotReport(companyName, repairBots, defenceBots) {
 }
 
 // Было
-// console.log(getBotReport('Cyberdyne Systems', 150, 50));
+console.log(getBotReport('Cyberdyne Systems', 150, 50));
 
 // Ожидается
-console.log(
-    getBotReport({
-        companyName: 'Cyberdyne Systems',
-        bots: {
-            repair: 150,
-            defence: 50,
-        },
-    }),
-); // "Cyberdyne Systems has 200 bots in stock"
+// console.log(
+//     getBotReport({
+//         companyName: 'Cyberdyne Systems',
+//         bots: {
+//             repair: 150,
+//             defence: 50,
+//         },
+//     }),
+// ); // "Cyberdyne Systems has 200 bots in stock"

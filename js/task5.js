@@ -1,32 +1,24 @@
-//todo Операция spread
+//todo Операция rest
 /*
- * Дополни функцию createContact(partialContact) так, чтобы она возвращала новый объект контакта с добавленными свойствами id и createdAt, а также list со значением "default" если в partialContact нет такого свойства.
+ * Напиши функцию transformUsername(user) так, чтобы она возвращала новый объект со свойством fullName, вместо firstName и lastName.
  */
 
-// Решение
-function createContact(partialContact) {
-    return {
-        list: 'default',
-        ...partialContact,
-        id: generateId(),
-        createdAt: Date.now(),
-    };
-}
+// console.log(
+//     transformId({
+//         id: 1,
+//         firstName: 'Jacob',
+//         lastName: 'Mercer',
+//         email: 'j.mercer@mail.com',
+//         friendCount: 40,
+//     }),
+// );
 
-console.log(
-    createContact({
-        name: 'Mango',
-        email: 'mango@mail.com',
-        list: 'friends',
-    }),
-);
-console.log(
-    createContact({
-        name: 'Poly',
-        email: 'poly@hotmail.com',
-    }),
-);
-
-function generateId() {
-    return '_' + Math.random().toString(36).substr(2, 9);
-}
+// console.log(
+//     transformId({
+//         id: 2,
+//         firstName: 'Adrian',
+//         lastName: 'Cross',
+//         email: 'a.cross@hotmail.com',
+//         friendCount: 20,
+//     }),
+// );
