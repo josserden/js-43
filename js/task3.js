@@ -1,28 +1,22 @@
-//todo Массив объектов
+//todo  Глубокая деструктуризация
 /*
- * Напишите ф-цию calcTotalPrice(array, stoneName), которая принимает массив объектов и строку с названием камня. Ф-ция считает и возвращает общую стоимость камней с таким именем, ценой и количеством из объекта
+ * Перепиши функцию так, чтобы она принимала один объект параметров, вместо набора независимых аргументов.
  */
 
-const stones = [
-    { name: 'Изумруд', price: 1300, quantity: 4 },
-    { name: 'Бриллиант', price: 2700, quantity: 3 },
-    { name: 'Сапфир', price: 400, quantity: 7 },
-    { name: 'Щебень', price: 200, quantity: 2 },
-];
-
-function calcTotalPrice(array, stoneName) {
-    let message = 'ничего не найдено';
-
-    for (const object of array) {
-        if (object.name === stoneName) {
-            message = `общая стоимость ${object.name} - ${
-                object.price * object.quantity
-            } при стоимости ${object.price} за штуку`;
-        }
-    }
-
-    return message;
+function getBotReport(companyName, repairBots, defenceBots) {
+    return `${companyName} has ${repairBots + defenceBots} bots in stock`;
 }
 
-console.log(calcTotalPrice(stones, 'Щебень'));
-console.log(calcTotalPrice(stones, 'Кирпич'));
+// Было
+// console.log(getBotReport('Cyberdyne Systems', 150, 50));
+
+// Ожидается
+console.log(
+    getBotReport({
+        companyName: 'Cyberdyne Systems',
+        bots: {
+            repair: 150,
+            defence: 50,
+        },
+    }),
+); // "Cyberdyne Systems has 200 bots in stock"

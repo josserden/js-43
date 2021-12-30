@@ -1,30 +1,39 @@
-//todo Основы объектов
+//todo Деструктуризация
 /*
- * Напиши скрипт, который, для объекта user, последовательно:
-
-* добавляет поле mood со значением 'happy'
-* заменяет значение hobby на 'skydiving'
-* заменяет значение premium на false
-* выводит содержимое объекта user в формате ключ:значение используя Object.keys() и for...of
+ * Перепиши функцию так, чтобы она принимала один объект параметров, вместо набора независимых аргументов.
  */
 
-const user = {
-    name: 'John',
-    age: 21,
-    hobby: 'css',
-    premium: true,
-};
-
-user.mood = 'happy';
-user.hobby = 'skydiving';
-user.premium = false;
-
-const keys = Object.keys(user);
-
-// console.log(keys);
-
-for (const key of keys) {
-    console.log(`${key} : ${user[key]}`);
+function calcBMI(weight, height) {
+    const numericWeight = Number(weight.replace(',', '.'));
+    const numericHeight = Number(height.replace(',', '.'));
+    return Number((numericWeight / numericHeight ** 2).toFixed(1));
 }
 
-console.log(user);
+function calcBMI({}) {
+    // body
+}
+
+// Было
+// console.log(calcBMI('88,3', '1.75'));
+// console.log(calcBMI('68,3', '1.65'));
+// console.log(calcBMI('118,3', '1.95'));
+
+// Ожидается
+console.log(
+    calcBMI({
+        weight: '88,3',
+        height: '1.75',
+    }),
+);
+console.log(
+    calcBMI({
+        weight: '68,3',
+        height: '1.65',
+    }),
+);
+console.log(
+    calcBMI({
+        weight: '118,3',
+        height: '1.95',
+    }),
+);
