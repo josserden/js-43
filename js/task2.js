@@ -8,14 +8,41 @@
  */
 const TRANSACTION_LIMIT = 1000;
 
-const account = {};
+const account = {
+    balance: 400,
 
-function handleSuccess(message) {
-    console.log(`✅ Success! ${message}`);
-}
-function handleError(message) {
-    console.log(`❌ Error! ${message}`);
-}
+    withdraw(amount, onSuccess, onError) {
+        if (amount > TRANSACTION_LIMIT) {
+            onError(`Сумма ${amount} превышает лимит ${TRANSACTION_LIMIT}`);
+        } else if (amount > this.balance) {
+            onError(
+                `Сумма ${amount} превышает остаток на счете -  ${this.balance}`,
+            );
+        } else {
+            this.balance -= amount;
+            onSuccess(
+                `Операция на сумму ${amount} выполнена. На счету -  ${this.balance}`,
+            );
+        }
+    },
+
+    deposit(amount, onSuccess, onError) {
+        if (amount > TRANSACTION_LIMIT) {
+            onError(`Сумма ${amount} превышает лимит ${TRANSACTION_LIMIT}`);
+        } else if (amount <= 0) {
+            onError(`Сумма ${amount} должна быть больше 0`);
+        } else {
+            this.balance += amount;
+            onSuccess(
+                `Операция на сумму ${amount} выполнена. На счету -  ${this.balance}`,
+            );
+        }
+    },
+};
+
+const handleSuccess = message => console.log(`✅ Success! ${message}`);
+
+const handleError = message => console.log(`❌ Error! ${message}`);
 
 // account.withdraw(2000, handleSuccess, handleError);
 // account.withdraw(600, handleSuccess, handleError);
