@@ -1,24 +1,26 @@
-//todo Деструктуризация
+//todo Коллбек функции
 /*
- * Перепиши функцию так, чтобы она принимала один объект параметров, вместо набора независимых аргументов.
- */
+ * Добавьте объекту account методы withdraw(amount, onSuccess, onError) и deposit(amount, onSuccess, onError), где первый параметр это сумма операции, а второй и третий - колбеки.
 
-function printContactsInfo({ phones, names }) {
-    const nameList = names.split(',');
-    const phoneList = phones.split(',');
-    for (let i = 0; i < nameList.length; i += 1) {
-        console.log(`${nameList[i]}: ${phoneList[i]}`);
-    }
+* Метод withdraw вызывает onError если amount больше TRANSACTION_LIMIT или this.balance, и onSuccess в противном случае.
+
+* Метод deposit вызывает onError если amount больше TRANSACTION_LIMIT или меньше либо равен нулю, и onSuccess в противном случае.
+ */
+const TRANSACTION_LIMIT = 1000;
+
+const account = {};
+
+function handleSuccess(message) {
+    console.log(`✅ Success! ${message}`);
+}
+function handleError(message) {
+    console.log(`❌ Error! ${message}`);
 }
 
-// Было
-// printContactsInfo(
-//     'Jacob,William,Solomon,Artemis',
-//     '89001234567,89001112233,890055566377,890055566300',
-// );
-
-// Ожидается
-printContactsInfo({
-    names: 'Jacob,William,Solomon,Artemis',
-    phones: '89001234567,89001112233,890055566377,890055566300',
-});
+// account.withdraw(2000, handleSuccess, handleError);
+// account.withdraw(600, handleSuccess, handleError);
+// account.withdraw(300, handleSuccess, handleError);
+// account.deposit(1700, handleSuccess, handleError);
+// account.deposit(0, handleSuccess, handleError);
+// account.deposit(-600, handleSuccess, handleError);
+// account.deposit(600, handleSuccess, handleError);

@@ -1,31 +1,14 @@
-//todo Операция spread
+//todo Метод forEach
 /*
- * Дополни функцию createContact(partialContact) так, чтобы она возвращала новый объект контакта с добавленными свойствами id и createdAt, а также list со значением "default" если в partialContact нет такого свойства.
+ * Выполните рефакторинг кода используя метод forEach и стрелочные функции.
  */
 
-function createContact(partialContact) {
-    return {
-        list: 'default',
-        ...partialContact,
-        id: generateId(),
-        createdAt: Date.now(),
-    };
+function logItems(items) {
+    console.log(items);
+    for (let i = 0; i < items.length; i += 1) {
+        console.log(`${i + 1} - ${items[i]}`);
+    }
 }
 
-console.log(
-    createContact({
-        name: 'Mango',
-        email: 'mango@mail.com',
-        list: 'friends',
-    }),
-);
-console.log(
-    createContact({
-        name: 'Poly',
-        email: 'poly@hotmail.com',
-    }),
-);
-
-function generateId() {
-    return '_' + Math.random().toString(36).substr(2, 9);
-}
+logItems(['Mango', 'Poly', 'Ajax']);
+logItems(['🍎', '🍇', '🍑', '🍌', '🍋']);
