@@ -82,11 +82,14 @@ const cars = [
         onSale: false,
     },
 ];
+
+console.table(cars);
+
 /*
  * Пусть функция getCarByModel возвращает автомобиль, параметр  которого удовлетворяет параметру поиска.
  */
 
-const getCarByModel = (cars, model) => {};
+const getCarByModel = (cars, model) => cars.find(car => car.model === model);
 
 console.log(getCarByModel(cars, 'F-150'));
 console.log(getCarByModel(cars, 'CX-9'));

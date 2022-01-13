@@ -82,11 +82,23 @@ const cars = [
         onSale: false,
     },
 ];
+
+console.table(cars);
 /*
  * Пусть функция sortByModel возвращает новый массив автомобилей отсортированный по названию модели в алфавитном и обратном алфавитном порядке, в зависимости от значения параметра order.
  */
 
-const sortByModel = (cars, order) => {};
+const sortByModel = (cars, order) => {
+    return [...cars].sort((a, b) => {
+        if (order === 'asc') {
+            return a.model.localeCompare(b.model);
+        }
+
+        if (order === 'desc') {
+            return b.model.localeCompare(a.model);
+        }
+    });
+};
 
 console.table(sortByModel(cars, 'asc'));
 console.table(sortByModel(cars, 'desc'));

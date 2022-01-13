@@ -83,10 +83,17 @@ const cars = [
     },
 ];
 
+// console.table(cars);
+
 /*
  * Пусть функция getModels возвращает массив моделей (поле model) всех автомобилей.
  */
 
-const getModels = cars => {};
+const getModels = cars =>
+    cars.map(car => {
+        return car.model;
+    });
+
+// const getModels = cars => cars.map(({ model }) => model);
 
 console.table(getModels(cars));

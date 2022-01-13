@@ -82,10 +82,14 @@ const cars = [
         onSale: false,
     },
 ];
+
+console.table(cars);
 /*
  * Пусть функция getTotalAmount возвращает общее количество автомобилей(значение свойств amount).
  */
 
-const getTotalAmount = cars => {};
+const getTotalAmount = cars => {
+    return cars.reduce((acc, element) => (acc += element.amount), 0);
+};
 
 console.log(getTotalAmount(cars));

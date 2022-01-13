@@ -82,10 +82,14 @@ const cars = [
         onSale: false,
     },
 ];
+
+console.table(cars);
 /*
  * Пусть функция getCarsWithDiscount возвращает массив автомобилей свойство onSale которых true.
  */
 
-const getCarsWithDiscount = cars => {};
+const getCarsWithDiscount = cars => {
+    return cars.filter(car => car.onSale === true);
+};
 
 console.table(getCarsWithDiscount(cars));

@@ -82,10 +82,14 @@ const cars = [
         onSale: false,
     },
 ];
+
+console.table(cars);
 /*
  * Пусть функция sortByAscendingAmount возвращает новый массив автомобилей отсортированный по возрастанию значения свойства amount.
  */
 
-const sortByAscendingAmount = cars => {};
+const sortByAscendingAmount = cars => {
+    return [...cars].sort((a, b) => a.amount - b.amount);
+};
 
 console.table(sortByAscendingAmount(cars));

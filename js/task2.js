@@ -82,11 +82,18 @@ const cars = [
         onSale: false,
     },
 ];
+
+// console.table(cars);
 /*
  * Пусть функция makeCarsWithDiscount возвращает новый массив объектов с именным значением свойства price в зависимости от переданной скидки.
  */
 
-const makeCarsWithDiscount = (cars, discount) => {};
+const makeCarsWithDiscount = (cars, discount) => {
+    return cars.map(car => ({
+        ...car,
+        price: car.price - car.price * discount,
+    }));
+};
 
 console.table(makeCarsWithDiscount(cars, 0.2));
 console.table(makeCarsWithDiscount(cars, 0.4));

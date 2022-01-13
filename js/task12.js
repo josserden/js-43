@@ -82,10 +82,14 @@ const cars = [
         onSale: false,
     },
 ];
+
+console.table(cars);
 /*
  * Пусть функция getSortedCarsOnSale возвращает массив автомобилей на распродаже (свойство onSale), отсортированных по возрастанию цены.
  */
 
-const getSortedCarsOnSale = cars => {};
+const getSortedCarsOnSale = cars => {
+    return cars.filter(car => car.onSale).sort((a, b) => a.price - b.price);
+};
 
 console.table(getSortedCarsOnSale(cars));
