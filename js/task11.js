@@ -1,4 +1,4 @@
-//todo Метод filter
+//todo Цепочки методов
 
 const cars = [
     {
@@ -83,10 +83,9 @@ const cars = [
     },
 ];
 /*
- * Пусть функция filterByPrice возвращает массив автомобилей, цена которых меньше чем значение параметра threshold.
+ * Пусть функция getAvailableCarNames возвращает массив моделей автомобилей, но только тех, которые сейчас на распродаже.
  */
 
-const filterByPrice = (cars, threshold) => {};
+const getModelsOnSale = cars => {};
 
-console.table(filterByPrice(cars, 30000));
-console.table(filterByPrice(cars, 25000));
+console.table(getModelsOnSale(cars));

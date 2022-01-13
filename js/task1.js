@@ -1,41 +1,92 @@
-//todo Коллбек функции
+//todo Метод map
+
+const cars = [
+    {
+        make: 'Honda',
+        model: 'CR-V',
+        type: 'suv',
+        amount: 14,
+        price: 24045,
+        onSale: true,
+    },
+    {
+        make: 'Honda',
+        model: 'Accord',
+        type: 'sedan',
+        amount: 2,
+        price: 22455,
+        onSale: true,
+    },
+    {
+        make: 'Mazda',
+        model: 'Mazda 6',
+        type: 'sedan',
+        amount: 8,
+        price: 24195,
+        onSale: false,
+    },
+    {
+        make: 'Mazda',
+        model: 'CX-9',
+        type: 'suv',
+        amount: 7,
+        price: 31520,
+        onSale: true,
+    },
+    {
+        make: 'Toyota',
+        model: '4Runner',
+        type: 'suv',
+        amount: 19,
+        price: 34210,
+        onSale: false,
+    },
+    {
+        make: 'Toyota',
+        model: 'Sequoia',
+        type: 'suv',
+        amount: 16,
+        price: 45560,
+        onSale: false,
+    },
+    {
+        make: 'Toyota',
+        model: 'Tacoma',
+        type: 'truck',
+        amount: 4,
+        price: 24320,
+        onSale: true,
+    },
+    {
+        make: 'Ford',
+        model: 'F-150',
+        type: 'truck',
+        amount: 11,
+        price: 27110,
+        onSale: true,
+    },
+    {
+        make: 'Ford',
+        model: 'Fusion',
+        type: 'sedan',
+        amount: 13,
+        price: 22120,
+        onSale: true,
+    },
+    {
+        make: 'Ford',
+        model: 'Explorer',
+        type: 'suv',
+        amount: 6,
+        price: 31660,
+        onSale: false,
+    },
+];
+
 /*
- * createProduct(obj, callback) - принимает объект товара без id, а также коллбек. Функция создаёт объект товара, добавляя ему уникальный идентификатор в свойство id и вызывает коллбек передавая ему созданный объект.
- * logProduct(product) - коллбек принимающий объект продукта и логирующий его в консоль
- * logTotalPrice(product) - коллбек принимающий объект продукта и логирующий общую стоимость товара в консоль
- *
+ * Пусть функция getModels возвращает массив моделей (поле model) всех автомобилей.
  */
 
-// function createProduct(object, callback) {
-//     const product = {
-//         id: Date.now(),
-//         ...object,
-//     };
+const getModels = cars => {};
 
-//     return callback(product);
-// }
-
-// function logProduct(element) {
-//     console.log(element);
-// }
-
-// function logTotalPrice(product) {
-//     console.log(product.price * product.quantity);
-// }
-
-// const createProduct = (object, callback) => {
-//     const product = {
-//         id: Date.now(),
-//         ...object,
-//     };
-
-//     return callback(product);
-// };
-
-// const logProduct = element => console.log(element);
-
-// const logTotalPrice = product => console.log(product.price * product.quantity);
-
-createProduct({ name: '🍎', price: 30, quantity: 3 }, logProduct);
-
-// createProduct({ name: '🍋', price: 20, quantity: 5 }, logTotalPrice);
+console.table(getModels(cars));

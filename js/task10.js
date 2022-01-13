@@ -1,4 +1,4 @@
-//todo Метод filter
+//todo Метод reduce
 
 const cars = [
     {
@@ -83,10 +83,9 @@ const cars = [
     },
 ];
 /*
- * Пусть функция filterByPrice возвращает массив автомобилей, цена которых меньше чем значение параметра threshold.
+ * Пусть функция getTotalAmount возвращает общее количество автомобилей(значение свойств amount).
  */
 
-const filterByPrice = (cars, threshold) => {};
+const getTotalAmount = cars => {};
 
-console.table(filterByPrice(cars, 30000));
-console.table(filterByPrice(cars, 25000));
+console.log(getTotalAmount(cars));

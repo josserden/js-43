@@ -1,4 +1,4 @@
-//todo Метод filter
+//todo Метод sort
 
 const cars = [
     {
@@ -83,10 +83,9 @@ const cars = [
     },
 ];
 /*
- * Пусть функция filterByPrice возвращает массив автомобилей, цена которых меньше чем значение параметра threshold.
+ * Пусть функция sortByAscendingAmount возвращает новый массив автомобилей отсортированный по возрастанию значения свойства amount.
  */
 
-const filterByPrice = (cars, threshold) => {};
+const sortByAscendingAmount = cars => {};
 
-console.table(filterByPrice(cars, 30000));
-console.table(filterByPrice(cars, 25000));
+console.table(sortByAscendingAmount(cars));

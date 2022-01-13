@@ -1,4 +1,4 @@
-//todo Метод filter
+// * Коллекция объектов для всех примеров с автомобилями
 
 const cars = [
     {
@@ -82,11 +82,3 @@ const cars = [
         onSale: false,
     },
 ];
-/*
- * Пусть функция filterByPrice возвращает массив автомобилей, цена которых меньше чем значение параметра threshold.
- */
-
-const filterByPrice = (cars, threshold) => {};
-
-console.table(filterByPrice(cars, 30000));
-console.table(filterByPrice(cars, 25000));
