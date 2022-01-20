@@ -1,39 +1,23 @@
-//todo Метод filter
+//todo User
 
 /*
-*
-Создайте объект calculator с тремя методами:
-
-* read(a, b)- принимает два значения и сохраняет их как свойства объекта.
-* add() - возвращает сумму сохранённых значений.
-* mult() - перемножает сохранённые значения и возвращает результат.
-*/
-
-/*
- * Пусть функция filterByPrice возвращает массив автомобилей, цена которых меньше чем значение параметра threshold.
+ * Напиши класс User который создаёт объект со свойствами login и email. Объяви приватные свойства #login и #email, доступ к которым сделай через геттер и сеттер login и email.
  */
 
-const calculator = {
-    x: 0,
-    y: 0,
+const mango = new User({
+    login: 'Mango',
+    email: 'mango@dog.woof',
+});
 
-    read(firstValue, secondValue) {
-        this.x = firstValue;
-        this.y = secondValue;
-    },
+console.log(mango.login); // Mango
+mango.login = 'Mangodoge';
+console.log(mango.login); // Mangodoge
 
-    add() {
-        return this.x + this.y;
-    },
+const poly = new User({
+    login: 'Poly',
+    email: 'poly@mail.com',
+});
 
-    mult() {
-        return this.x * this.y;
-    },
-};
-
-// calculator.read(5, 10);
-// console.log(calculator.add());
-
-// calculator.read(50, 90);
-// console.log(calculator.add());
-// console.log(calculator.mult());
+console.log(poly.login); // Poly
+poly.login = 'Polycutie';
+console.log(poly.login); // Polycutie

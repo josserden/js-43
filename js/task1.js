@@ -1,52 +1,37 @@
-// //todo Мастерская драгоценностей
+//todo Блоггер
 
-// /*
-//  * Напишите метод calcTotalPrice(stoneName), который принимает название камня и рассчитывает и возвращает общую стоимость камней с таким именем, ценой и количеством из свойства stones.
-//  */
+/*
+* Напиши класс Blogger для создания объекта блогера со следующим свойствами:
 
-// const chopShop = {
-//     stones: [
-//         { name: 'Emerald', price: 1300, quantity: 4 },
-//         { name: 'Diamond', price: 2700, quantity: 3 },
-//         { name: 'Sapphire', price: 1400, quantity: 7 },
-//         { name: 'Ruby', price: 800, quantity: 2 },
-//     ],
+* email - почта, строка
+* age - возраст, число
+* numberOfPosts - кол-во постов, число
+* topics - массив тем на которых специализируется блоггер
+* Класс ожидает один параметр - объект настроек с одноимёнными свойствами.
 
-//     calcTotalPrice(stoneName) {
-//         const findElement = this.stones.find(
-//             element => element.name === stoneName,
-//         );
+* Добавь метод getInfo(), который, возвращает строку:
+* User ${почта} is ${возраст} years old and has ${кол-во постов} posts.
 
-//         if (findElement) {
-//             return findElement.price * findElement.quantity;
-//         }
+* Добавь метод updatePostCount(value), который в параметре value
+* принимает количество постов которые нужно добавить пользователю.
+*/
 
-//         return console.log('No ok');
-//     },
-// };
+const mango = new User({
+    name: 'mango@mail.com',
+    age: 24,
+    numberOfPosts: 20,
+    topics: ['tech', 'cooking'],
+});
+console.log(mango.getInfo()); // User mango@mail.com is 24 years old and has 20 posts
+mango.updatePostCount(5);
+console.log(mango.getInfo()); // User mango@mail.com is 24 years old and has 25 posts
 
-// console.log(chopShop.calcTotalPrice('Emerald')); // 5200
-// console.log(chopShop.calcTotalPrice('Diamond')); // 8100
-// console.log(chopShop.calcTotalPrice('Sapphire')); // 9800
-// console.log(chopShop.calcTotalPrice('Ruby')); // 1600
-// console.log(chopShop.calcTotalPrice('Rubyfdfs')); // 1600
-
-// const icon = {
-//     _color: '#fff',
-//     _size: '20px',
-
-//     color(newColor) {
-//         this._color = newColor;
-
-//         return this;
-//     },
-
-//     size(newSize) {
-//         this._size = newSize;
-
-//         return this;
-//     },
-// };
-
-// console.log(icon.color('red').size('40px'));
-// console.log(icon.color('grey').size('80px'));
+const poly = new User({
+    name: 'poly@mail.com',
+    age: 19,
+    numberOfPosts: 17,
+    topics: ['sports', 'gaming', 'health'],
+});
+console.log(poly.getInfo()); // User poly@mail.com is 19 years old and has 17 posts
+poly.updatePostCount(4);
+console.log(poly.getInfo()); // User poly@mail.com is 19 years old and has 21 posts

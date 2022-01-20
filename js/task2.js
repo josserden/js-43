@@ -1,44 +1,22 @@
-//todo Телефонная книга
+//todo Хранилище
 
 /*
- * Выполните рефакторинг методов объекта phonebook чтобы код заработал.
+ * Напиши класс Storage который создаёт объекты для управления складом товаров. При вызове будет получать один аргумент - начальный массив товаров, и записывать его в свойство items.
+
+* Добавь методы класса:
+
+* getItems() - возвращает массив товаров.
+* addItem(item) - получает новый товар и добавляет его к текущим.
+* removeItem(item) - получает товар и, если он есть, удаляет его из текущих.
  */
 
-const phonebook = {
-    contacts: [],
+const storage = new Storage(['🍎', '🍋', '🍇', '🍑']);
 
-    add(contact) {
-        const newContact = {
-            list: 'default',
-            ...contact,
-            id: this.generateId(),
-            createdAt: this.getDate(),
-        };
+const items = storage.getItems();
+console.table(items); // [ '🍎', '🍋', '🍇', '🍑' ]
 
-        this.contacts.push(newContact);
+storage.addItem('🍌');
+console.table(storage.items); // [ '🍎', '🍋', '🍇', '🍑', '🍌' ]
 
-        return this.contacts;
-    },
-
-    generateId() {
-        return '_' + Math.random().toString(36).substr(2, 9);
-    },
-
-    getDate() {
-        return Date.now();
-    },
-};
-
-console.log(
-    phonebook.add({
-        name: 'Mango',
-        email: 'mango@mail.com',
-        list: 'friends',
-    }),
-);
-console.log(
-    phonebook.add({
-        name: 'Poly',
-        email: 'poly@hotmail.com',
-    }),
-);
+storage.removeItem('🍋');
+console.table(storage.items); // [ '🍎', '🍇', '🍑', '🍌' ]
