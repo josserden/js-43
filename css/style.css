@@ -1,0 +1,140 @@
+:root {
+    --main-bg: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    --main-font-color: #403866;
+    --main-accent-color: #8f8fa1;
+    --main-light: #ffffff;
+    --main-mint: #00a8a8;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+        segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial,
+        sans-serif;
+
+    background: var(--main-bg);
+
+    color: var(--main-font-color);
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1200px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.form,
+.main {
+    padding: 20px;
+}
+
+.label {
+    display: block;
+    color: var(--main-font-color);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.input {
+    display: block;
+    width: 350px;
+    height: 40px;
+
+    padding: 0 20px;
+    margin-top: 15px;
+    background: var(--main-light);
+    border-radius: 8px;
+    border: 1px solid var(--main-accent-color);
+    outline: none;
+
+    color: var(--main-accent-color);
+    font-size: 18px;
+    font-weight: inherit;
+}
+
+.input:focus {
+    box-shadow: 0px 0px 1px 1px var(--main-accent-color);
+}
+
+.button {
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+
+    background-color: var(--main-mint);
+    color: var(--main-light);
+
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.list {
+    width: 350px;
+
+    margin: 0;
+    padding: 0;
+
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item {
+    position: relative;
+    list-style-type: none;
+    padding-left: 40px;
+    margin-bottom: 8px;
+
+    border-bottom: 1px solid var(--main-accent-color);
+}
+
+.item:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.item::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 5px;
+    height: 11px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: var(--main-mint);
+    transform-origin: bottom left;
+    transform: rotate(45deg);
+}
+
+.total {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-size: 18px;
+}
+
+.total-amount {
+    color: var(--main-mint);
+}
