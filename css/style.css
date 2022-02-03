@@ -4,6 +4,8 @@
     --main-accent-color: #8f8fa1;
     --main-light: #ffffff;
     --main-mint: #00a8a8;
+    --resolved: #59c173;
+    --rejected: #c31432;
 }
 
 *,
@@ -101,12 +103,14 @@ body {
 }
 
 .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     position: relative;
     list-style-type: none;
-    padding-left: 40px;
+    padding-left: 30px;
     margin-bottom: 8px;
-
-    border-bottom: 1px solid var(--main-accent-color);
 }
 
 .item:not(:last-child) {
@@ -118,14 +122,30 @@ body {
     display: block;
     position: absolute;
     left: 0;
-    top: -2px;
-    width: 5px;
-    height: 11px;
+    top: 16px;
+    width: 6px;
+    height: 12px;
     border-width: 0 2px 2px 0;
     border-style: solid;
-    border-color: var(--main-mint);
+
     transform-origin: bottom left;
     transform: rotate(45deg);
+}
+
+.item-minus {
+    border-bottom: 1px solid var(--rejected);
+}
+
+.item-minus::before {
+    border-color: var(--rejected);
+}
+
+.item-plus {
+    border-bottom: 1px solid var(--resolved);
+}
+
+.item-plus::before {
+    border-color: var(--resolved);
 }
 
 .total {
@@ -135,6 +155,14 @@ body {
     font-size: 18px;
 }
 
-.total-amount {
-    color: var(--main-mint);
+.total + .total {
+    margin-top: 80px;
+}
+
+.total-deposit {
+    color: var(--resolved);
+}
+
+.total-withdraw {
+    color: var(--rejected);
 }
