@@ -1,9 +1,10 @@
 const button = document.querySelector('.button');
 const body = document.body;
 
-button.addEventListener('click', onClick);
+button.addEventListener('click', _.throttle(onClick, 500));
 
 function onClick() {
+    console.log('click');
     body.setAttribute('style', `background:${getRandomHexColor()}`);
 }
 

@@ -16,10 +16,12 @@ const contacts = [
 const input = document.querySelector('.input');
 const contactsList = document.querySelector('.contacts-list');
 
-input.addEventListener('input', onInput);
+input.addEventListener('input', _.throttle(onInput, 800));
 
 function onInput(event) {
-    const request = event.target.value.trim();
+    const request = event.target.value.trim().toLowerCase();
+
+    console.log(request);
 
     const filteredContacts = contacts.filter(contact =>
         contact.toLowerCase().includes(request),
@@ -32,6 +34,7 @@ renderContacts(contacts);
 
 function renderContacts(contacts) {
     contactsList.innerHTML = '';
+
     const markup = contacts.map(contact => `<li>${contact}</li>`).join('');
 
     contactsList.insertAdjacentHTML('beforeend', markup);
