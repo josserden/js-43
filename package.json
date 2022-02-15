@@ -1,0 +1,26 @@
+{
+  "name": "js-43",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 20 versions, not dead",
+  "scripts": {
+    "start": "parcel -p 1488 --open",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josserden/js-43.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josserden/js-43/issues"
+  },
+  "homepage": "https://github.com/josserden/js-43#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.3.1",
+    "parcel": "^2.3.1"
+  }
+}
