@@ -1,4 +1,5 @@
-import { differenceInCalendarYears, getDate, getMonth } from 'date-fns';
+import { differenceInCalendarYears, getDate, getMonth, format } from 'date-fns';
+import { uk } from 'date-fns/locale';
 import employees from './data/employees.json';
 import comments from './data/comments.json';
 
@@ -34,14 +35,14 @@ function prepareListMarkup() {
                 <div class="card">
                   <div class="card-body">
                       <span class="text-muted">автор</span>
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">
-                          content
-                      </p>
+                      <h5 class="card-title">Автор</h5>
+                      <p class="card-text">content</p>
                   </div>
-                <div class="card-footer text-muted"> posted 2 days ago</div>
+                <div class="card-footer text-muted">posted</div>
               </div>
             `;
         })
         .join('');
 }
+
+function dateFormat(time) {}
