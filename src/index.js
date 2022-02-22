@@ -1,40 +1,47 @@
-import './sass/main.scss';
+import { differenceInCalendarYears, getDate, getMonth } from 'date-fns';
+import employees from './data/employees.json';
+import comments from './data/comments.json';
 
-const form = document.querySelector('.form');
+document.querySelector('.table').innerHTML = prepareTableMarkup();
 
-initForm();
+function prepareTableMarkup() {
+    return employees
+        .map(employee => {
+            return `
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Имя</td>
+                <td>Возраст</td>
+                <td>Да/Нет</td>
+              </tr>
+          <tbody>
+    `;
+        })
+        .join('');
+}
 
-form.addEventListener('submit', event => {
-    event.preventDefault();
+function calculateAge(birthday) {}
 
-    const formData = new FormData(form);
-    formData.forEach((key, value) => console.log(`${value}-${key}`));
-});
+function isBirthday(date) {}
 
-form.addEventListener('reset', () => {
-    localStorage.removeItem('selectedFilters');
-});
+document.querySelector('.list').innerHTML = prepareListMarkup();
 
-form.addEventListener('change', event => {
-    let parsedFilters = localStorage.getItem('selectedFilters');
-
-    parsedFilters = parsedFilters ? JSON.parse(parsedFilters) : {};
-
-    parsedFilters[event.target.name] = event.target.value;
-
-    if (!parsedFilters) return;
-
-    localStorage.setItem('selectedFilters', JSON.stringify(parsedFilters));
-});
-
-function initForm() {
-    let parsedFilters = localStorage.getItem('selectedFilters');
-
-    if (parsedFilters) {
-        parsedFilters = JSON.parse(parsedFilters);
-    }
-
-    Object.entries(parsedFilters).forEach(
-        ([name, value]) => (form.elements[name].value = value),
-    );
+function prepareListMarkup() {
+    return comments
+        .map(comment => {
+            return `
+                <div class="card">
+                  <div class="card-body">
+                      <span class="text-muted">автор</span>
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">
+                          content
+                      </p>
+                  </div>
+                <div class="card-footer text-muted"> posted 2 days ago</div>
+              </div>
+            `;
+        })
+        .join('');
 }

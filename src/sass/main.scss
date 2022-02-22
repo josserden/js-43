@@ -3,11 +3,5 @@
  * Все паршалы подключаются сюда.
  */
 
-:root {
-    --select-border: #777;
-    --select-focus: blue;
-    --select-arrow: var(--select-border);
-}
-
 // Стили для файла с примером HTML-фрагмента
 @import './example';

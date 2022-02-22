@@ -1,0 +1,18 @@
+[
+  {
+    "username": "Jacob",
+    "birthDay": "1982-05-01T00:00:00.000Z"
+  },
+  {
+    "username": "Jacob",
+    "birthDay": "1997-03-18T00:00:00.000Z"
+  },
+  {
+    "username": "John",
+    "birthDay": "2003-02-22T00:00:00.000Z"
+  },
+  {
+    "username": "Jack",
+    "birthDay": "1992-07-12T00:00:00.000Z"
+  }
+]
