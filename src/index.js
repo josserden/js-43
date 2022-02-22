@@ -1,20 +1,24 @@
-import { differenceInCalendarYears, getDate, getMonth, format } from 'date-fns';
-import { uk } from 'date-fns/locale';
+// Data
 import employees from './data/employees.json';
 import comments from './data/comments.json';
 
-document.querySelector('.table').innerHTML = prepareTableMarkup();
+// Named Import
+import { calculateAge } from './js/helpers/calculateAge';
+import { isBirthday } from './js/helpers/isBirthday';
+import { dateFormat } from './js/helpers/dateFormat';
+
+document.querySelector('.js-table').innerHTML = prepareTableMarkup();
 
 function prepareTableMarkup() {
     return employees
-        .map(employee => {
+        .map(({ username, birthDay }, index) => {
             return `
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td>Имя</td>
-                <td>Возраст</td>
-                <td>Да/Нет</td>
+                <th scope="row">${index + 1}</th>
+                <td>${username}</td>
+                <td>${calculateAge(birthDay)}</td>
+                <td>${isBirthday(birthDay) ? 'Yes' : 'No'}</td>
               </tr>
           <tbody>
     `;
@@ -22,27 +26,23 @@ function prepareTableMarkup() {
         .join('');
 }
 
-function calculateAge(birthday) {}
-
-function isBirthday(date) {}
-
 document.querySelector('.list').innerHTML = prepareListMarkup();
 
 function prepareListMarkup() {
     return comments
-        .map(comment => {
+        .map(({ author, content, createdAt }) => {
             return `
                 <div class="card">
                   <div class="card-body">
                       <span class="text-muted">автор</span>
-                      <h5 class="card-title">Автор</h5>
-                      <p class="card-text">content</p>
+                      <h5 class="card-title">${author}</h5>
+                      <p class="card-text">${content}</p>
                   </div>
-                <div class="card-footer text-muted">posted</div>
+                <div class="card-footer text-muted">posted ${dateFormat(
+                    createdAt,
+                )}</div>
               </div>
             `;
         })
         .join('');
 }
-
-function dateFormat(time) {}
