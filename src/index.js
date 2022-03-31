@@ -1,48 +1,8 @@
-//Imports
-import { calculateAge } from './js/helpers/calculateAge.js';
-import { isBirthday } from './js/helpers/isBirthday';
-import { dateFormat } from './js/helpers/dateFormat';
+// Task 1
+// import './js/task1.js';
 
-// Data
-import employees from './data/employees.json';
-import comments from './data/comments.json';
+// Task 2
+// import './js/task2.js';
 
-document.querySelector('.js-table').innerHTML = prepareTableMarkup();
-
-function prepareTableMarkup() {
-    return employees
-        .map(({ username, birthDay }, index) => {
-            return `
-            <tbody>
-              <tr>
-                <th scope="row">${index + 1}</th>
-                <td>${username}</td>
-                <td>${calculateAge(birthDay)}</td>
-                <td>${isBirthday(birthDay) ? 'Yes' : 'No'}</td>
-              </tr>
-          <tbody>
-    `;
-        })
-        .join('');
-}
-
-document.querySelector('.list').innerHTML = prepareListMarkup();
-
-function prepareListMarkup() {
-    return comments
-        .map(({ author, content, createdAt }) => {
-            return `
-                <div class="card">
-                  <div class="card-body">
-                      <span class="text-muted">автор</span>
-                      <h5 class="card-title">${author}</h5>
-                      <p class="card-text">${content}</p>
-                  </div>
-                <div class="card-footer text-muted">posted ${dateFormat(
-                    createdAt,
-                )}</div>
-              </div>
-            `;
-        })
-        .join('');
-}
+// Task 3
+import './js/task3.js';
