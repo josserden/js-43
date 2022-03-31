@@ -1,14 +1,19 @@
 console.log('Task 1');
 
 // Import showNotify
-import { showNotify } from './notification';
+import { showNotify } from './showNotify';
 
 /*
  * Напиши функцию delay(ms), которая возвращает промис, переходящий в состояние "resolved" через ms миллисекунд. Значением исполнившегося промиса должно быть то кол-во миллисекунд которое передали во время вызова функции delay.
  */
 
-const delay = ms => {};
-const logger = time => showNotify(`Resolved after ${time}ms`);
+const delay = ms => {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(ms), ms);
+    });
+};
+
+const logger = time => showNotify(`Resolved after ${time} ms`);
 
 // Вызовы функции для проверки
 delay(2000).then(logger); // Resolved after 2000ms

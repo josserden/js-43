@@ -5,4 +5,7 @@
 // import './js/task2.js';
 
 // Task 3
-import './js/task3.js';
+// import './js/task3.js';
+
+// Test
+import './js/test';
