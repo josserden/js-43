@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;AACA,aADA,QAAA,8CACA,QAAA","file":"src.107568c7.js","sourceRoot":"../src","sourcesContent":["import 'material-icons/iconfont/material-icons.css';\nimport './sass/main.scss';\n\n// avatar_url\n// name\n// location\n// bio\n// public_repos\n// followers\n"]}
