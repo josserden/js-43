@@ -21,7 +21,7 @@ export function getComments() {
 
       return {
         comments,
-        hasNextPage: page > totalPage,
+        hasNextPage: page <= totalPage,
       };
     });
 }
