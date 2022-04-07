@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;AACA,aADA,QAAA,8CACA,QAAA","file":"src.316baeeb.js","sourceRoot":"../src","sourcesContent":["import 'material-icons/iconfont/material-icons.css';\nimport './sass/main.scss';\n\n// https://624dade777abd9e37c7c8930.mockapi.io/comments\n"]}
