@@ -26,6 +26,8 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "axios": "^0.26.1",
+    "date-fns": "^2.28.0",
     "material-icons": "^1.10.8"
   }
 }
