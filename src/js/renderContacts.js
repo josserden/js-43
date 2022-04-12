@@ -14,7 +14,8 @@ export function renderContacts(container, contacts) {
               <span>${formatDate(createdAt)}</span>
             </div>
           </div>
-          <button type="button" class="btn-close" aria-label="Close"></button>
+          <button type="button" class="btn-close" aria-label="Close"
+          data-id="${id}"></button>
         </div>
         <div class="mt-2">
           <ul class="list-group list-group-flush">
