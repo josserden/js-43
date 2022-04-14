@@ -1,79 +1,38 @@
 import axios from 'axios';
 
-// const BASE_URL = 'https://6251bfb67f7fa1b1ddde85d8.mockapi.io/api';
-
 axios.defaults.baseURL = 'https://6251bfb67f7fa1b1ddde85d8.mockapi.io/api';
 axios.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
 
 // GET /api/contacts
-export const getContacts = () => {
-  return axios.get('/contacts');
-  //   return fetch(`${BASE_URL}/contacts`).then(response => {
-  //     if (!response.ok) {
-  //       throw Error(response.statusText);
-  //     }
+export const getContacts = async () => {
+  const { data } = await axios.get('/contacts');
 
-  //     return response.json();
-  //   });
+  return data;
 };
 
 // GET /api/contacts/:id
-export const getContact = id => {
-  return axios.get(`/contacts/${id}`);
-  //   return fetch(`${BASE_URL}/contacts/${id}`).then(response => {
-  //     if (!response.ok) {
-  //       throw Error(response.statusText);
-  //     }
-
-  //     return response.json();
-  //   });
+export const getContact = async id => {
+  const { data } = await axios.get(`/contacts/${id}`);
+  return data;
 };
 
 // POST /api/contacts
-export const createContact = contact => {
-  return axios.post('/contacts', contact);
-  //   return fetch(`${BASE_URL}/contacts`, {
-  //     method: 'POST',
-  //     body: JSON.stringify(contact),
-  //     headers: {
-  //       'Content-Type': 'application/json; charset=UTF-8',
-  //     },
-  //   }).then(response => {
-  //     if (!response.ok) {
-  //       throw Error(response.statusText);
-  //     }
-  //     return response.json();
-  //   });
+export const createContact = async contact => {
+  const { data } = await axios.post('/contacts', contact);
+
+  return data;
 };
 
 // DELETE /api/contacts/:id
-export const deleteContact = id => {
-  return axios.delete(`/contacts/${id}`);
-  //   return fetch(`${BASE_URL}/contacts/${id}`, {
-  //     method: 'DELETE',
-  //   }).then(response => {
-  //     if (!response.ok) {
-  //       throw Error(response.statusText);
-  //     }
+export const deleteContact = async id => {
+  const { data } = await axios.delete(`/contacts/${id}`);
 
-  //     return response.json();
-  //   });
+  return data;
 };
 
 // PUT /api/contacts/:id
-export const updateContact = (id, contact) => {
-  return axios.put(`/contacts/${id}`, contact);
-  //   return fetch(`${BASE_URL}/contacts/${id}`, {
-  //     method: 'PUT',
-  //     body: JSON.stringify(contact),
-  //     headers: {
-  //       'Content-Type': 'application/json; charset=UTF-8',
-  //     },
-  //   }).then(response => {
-  //     if (!response.ok) {
-  //       throw Error(response.statusText);
-  //     }
+export const updateContact = async (id, contact) => {
+  const { data } = await axios.put(`/contacts/${id}`, contact);
 
-  //     return response.json();
-  //   });
+  return data;
 };
