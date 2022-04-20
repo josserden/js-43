@@ -5,36 +5,40 @@ const form = document.querySelector('.form');
 initForm();
 
 form.addEventListener('submit', event => {
-    event.preventDefault();
-
-    const formData = new FormData(form);
-    formData.forEach((key, value) => console.log(`${value}-${key}`));
+  event.preventDefault();
+  const formData = new FormData(form);
+  formData.forEach((key, value) => console.log(`${key}-${value}`));
 });
 
 form.addEventListener('reset', () => {
-    localStorage.removeItem('selectedFilters');
+  localStorage.removeItem('selectedFilters');
 });
 
 form.addEventListener('change', event => {
-    let parsedFilters = localStorage.getItem('selectedFilters');
+  // console.log(event.target.name);
+  // console.log(event.target.value);
 
-    parsedFilters = parsedFilters ? JSON.parse(parsedFilters) : {};
+  let parsedFilters = localStorage.getItem('selectedFilters');
 
-    parsedFilters[event.target.name] = event.target.value;
+  parsedFilters = parsedFilters ? JSON.parse(parsedFilters) : {};
 
-    if (!parsedFilters) return;
+  parsedFilters[event.target.name] = event.target.value;
 
+  if (parsedFilters) {
     localStorage.setItem('selectedFilters', JSON.stringify(parsedFilters));
+  }
 });
 
 function initForm() {
-    let parsedFilters = localStorage.getItem('selectedFilters');
+  let parsedFilters = localStorage.getItem('selectedFilters');
 
-    if (parsedFilters) {
-        parsedFilters = JSON.parse(parsedFilters);
-    }
+  if (parsedFilters) {
+    parsedFilters = JSON.parse(parsedFilters);
 
-    Object.entries(parsedFilters).forEach(
-        ([name, value]) => (form.elements[name].value = value),
-    );
+    // console.log(parsedFilters);
+
+    Object.entries(parsedFilters).forEach(([name, value]) => {
+      form.elements[name].value = value;
+    });
+  }
 }
